@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ajv": "^6.5.1",
+    "ajv-keywords": "^3.2.0",
     "axios": "^0.18.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "react-virtualized": "^9.19.1",
+    "react-virtualized-tree": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

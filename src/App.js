@@ -4,11 +4,13 @@ import './App.css';
 import axios from 'axios';
 import Tree from './Tree';
 import Favorites from './Favorites';
+import Search from './Search';
 
 class App extends Component {
   state = {
     data: null,
-    favorites: []
+    favorites: [],
+    query: null
   }
 
   componentDidMount () {
@@ -43,10 +45,20 @@ class App extends Component {
     })
   }
 
+  searchHandler = (query) => {
+    if (query === '') {
+      query = null;
+    }
+    this.setState({
+      query: query
+    })
+  }
+
   render() {
     let tree = <p>loading...</p>;
     if (this.state.data) {
       tree = <Tree 
+        query={this.state.query}
         clicked={this.handleFavoritesAdd}
         data={this.state.data} />
     }
@@ -62,6 +74,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         <div>
+          <Search searchTyped={this.searchHandler}/>
           {favorites}
           {tree}
         </div>

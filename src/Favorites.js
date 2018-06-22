@@ -3,7 +3,6 @@ import Favorite from './Favorite';
 
 class Favorites extends Component {
   render() { 
-    console.log('inside favorites', this.props)
     const favoritesList = this.props.favorites.map((favorite => {
       return <Favorite 
         clicked={this.props.clicked}
